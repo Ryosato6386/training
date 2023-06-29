@@ -9,6 +9,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.demo.entity.User;
 import com.example.demo.service.UserService;
@@ -147,7 +148,21 @@ public class UserController {
 		}
 	}
 	
+	
+	
 //	追加機能
-
+	/**
+	 * 指定されたキーワードを含むユーザーを検索し、一覧画面を表示する。
+	 *
+	 * @param keyword 検索キーワード
+	 * @param model   モデル
+	 * @return ユーザー一覧画面
+	 */
+	@GetMapping("/user/search")
+	public String searchUser(@RequestParam("keyword") String keyword, Model model) {
+	    List<User> userList = userService.searchUsersByKeyword(keyword);
+	    model.addAttribute("userlist", userList);
+	    return "user/list";
+	}
 		
 }

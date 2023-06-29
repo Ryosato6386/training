@@ -86,4 +86,18 @@ public class UserService {
 			throw new OptimisticLockException(message);
 		}
 	}
+	
+	
+	//追加機能
+	/**
+	 * 指定されたキーワードを含むユーザーを検索する。
+	 *
+	 * @param keyword 検索キーワード
+	 * @return キーワードに一致するユーザーのリスト
+	 */
+	public List<User> searchUsersByKeyword(String keyword) {
+	    return userRepository.findByKeyword(keyword);
+	    // リポジトリのメソッドを呼び出してキーワードに一致するユーザーを検索するロジックを実装する
+	    // 例: return userRepository.findByKeyword(keyword);
+	}
 }

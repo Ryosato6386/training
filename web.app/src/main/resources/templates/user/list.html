@@ -7,18 +7,15 @@
     <h1>ユーザー情報: 一覧画面</h1>
     <br>
 
-  <!-- 検索フォーム -->
-  <!--  
-      <div class="row">
-  <label class="col-2 border bg-light col-form-label d-flex align-items-center" for="inputName">
-    キーワード<span class="badge bg-danger"></span>
-  </label>
-  <div class="col border p-2 d-flex justify-content-end">
-    <input type="text" class="form-control" id="inputName">
-    <a th:href="@{/user/search}" class="btn btn-success">検索</a>
-  </div>
-</div>
--->
+<!--   検索フォーム追加機能 -->
+
+<form th:action="@{/user/search}" method="GET">
+  <!-- キーワード入力フィールド -->
+  <input type="text" class="form-control" id="inputName" name="keyword">
+  <!-- 検索ボタン -->
+  <button type="submit" class="btn btn-success">検索</button>
+</form>
+
 
 
     <div class="float-end">

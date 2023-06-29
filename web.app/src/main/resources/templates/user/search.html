@@ -1,6 +1,24 @@
+<!--追加機能-->
+<!-- userlist.html -->
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="~{common/head :: head_fragment(scripts = ~{::script}, links = ~{::link})}">
+<head>
+  <!-- ヘッドセクションの設定 -->
+  <!-- ... -->
 </head>
-
+<body>
+  <div class="container">
+    <!-- ... -->
+    <table class="table table-striped">
+      <thead>
+        <!-- ... -->
+      </thead>
+      <tbody>
+        <tr th:each="user: ${userlist}">
+          <!-- ... -->
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
 </html>
