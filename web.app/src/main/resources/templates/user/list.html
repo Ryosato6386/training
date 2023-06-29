@@ -7,10 +7,24 @@
     <h1>ユーザー情報: 一覧画面</h1>
     <br>
 
+  <!-- 検索フォーム -->
+  <!--  
+      <div class="row">
+  <label class="col-2 border bg-light col-form-label d-flex align-items-center" for="inputName">
+    キーワード<span class="badge bg-danger"></span>
+  </label>
+  <div class="col border p-2 d-flex justify-content-end">
+    <input type="text" class="form-control" id="inputName">
+    <a th:href="@{/user/search}" class="btn btn-success">検索</a>
+  </div>
+</div>
+-->
+
+
     <div class="float-end">
       <a th:href="@{/user/add}" class="btn btn-primary">新規登録はこちら</a>
     </div>
-
+  
     <table class="table table-striped">
       <thead>
         <tr>
@@ -19,6 +33,8 @@
           <th>住所</th>
           <th>電話番号</th>
           <th>更新日時</th>
+          <th>前回編集者</th>
+          
           <th></th>
         </tr>
       </thead>
@@ -29,6 +45,7 @@
           <td th:text="*{address}"></td>
           <td class="center" th:text="*{phone}"></td>
           <td class="center" th:text="*{#temporals.format(updateDate, 'yyyy/MM/dd HH:mm:ss')}"></td>
+<!--  　    　<td th:text="*{editor}"></td>-->
           <td><a th:href="@{/user/{id}(id=*{id})}" class="btn btn-secondary">詳細</a></td>
         </tr>
       </tbody>

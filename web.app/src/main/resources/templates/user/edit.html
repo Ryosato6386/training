@@ -61,6 +61,7 @@
           <input type="hidden" th:field="*{deleteDate}">
         </div>
       </div>
+      
       <br>
       <div class="text-center">
         <a th:href="@{/user/list}" class="col-2 btn btn-secondary">一覧に戻る</a>
@@ -68,6 +69,16 @@
         <input type="submit" th:formaction="@{/user/update}" th:formmethod="post" class="col-2 btn btn-primary" value="更新する">
       </div>
     </form>
+
+<!--<div class="row">-->
+<!--  <label class="col-2 border bg-light col-form-label d-flex align-items-center" for="inputEditor">-->
+<!--    編集者:&nbsp;<span class="badge bg-danger">必須</span>-->
+<!--  </label>-->
+<!--  <div class="col border p-2">-->
+<!--    <input type="text" class="form-control" th:errorclass="is-invalid" id="inputEditor" th:field="*{editor}" placeholder="編集者名">-->
+<!--    <div class="invalid-feedback" th:errors="*{editor}"></div>-->
+<!--  </div>-->
+<!--</div>-->
 
   </div>
 

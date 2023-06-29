@@ -51,5 +51,9 @@ public class User {
 	@Column(name = "delete_date")
 	@DateTimeFormat(pattern = "yyyy/MM/dd HH:mm:ss")
 	private LocalDateTime deleteDate;
-
+	
+//	@Column(name = "editor")
+//	@NotBlank(message = "編集者名を入力してください")
+//	@Size(max = 50, message = "名前は50文字以内で入力してください")
+//	private String editor;
 }

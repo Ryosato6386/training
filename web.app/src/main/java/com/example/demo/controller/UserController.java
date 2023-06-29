@@ -111,7 +111,6 @@ public class UserController {
 	 * @param model モデル
 	 * @return ユーザー編集画面
 	 */
-	
 	@GetMapping("/user/{id}/edit")
 	public String displayEdit(@PathVariable Long id, Model model)
 	{
@@ -132,7 +131,6 @@ public class UserController {
 	 * @param model モデル
 	 * @return 一覧画面にリダイレクトする
 	 */
-	
 	@PostMapping("/user/update")
 	public String updateUser(@Validated User user, BindingResult result, Model model) {
 		if (result.hasErrors()) {
@@ -148,4 +146,8 @@ public class UserController {
 			return "user/edit";
 		}
 	}
+	
+//	追加機能
+
+		
 }
